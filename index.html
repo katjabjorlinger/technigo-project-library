@@ -4,10 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Don't forget to connect the CSS file -->
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <title>Library</title>
 </head>
 <body>
-  <h1>Library</h1>
+  <h1>Recipe Library</h1>
+
+  <div class="controls">
+    <h3>Filter on kitchen</h3>
+    <div id="filter-buttons">
+      <button data-filter="all">All</button>
+      <button data-filter="italian">Italy</button>
+      <button data-filter="american">USA</button>
+      <button data-filter="chinese">China</button>
+    </div>
+
+    <h3>Sort on time</h3>
+    <div id="sort-buttons">
+      <button data-sort="desc">Descending</button>
+      <button data-sort="asc">Ascending</button>
+    </div>
+  </div>
+
+  <div id="recipe-list"></div>
+
+
+  
   <!-- Don't forget to connect the JavaScript file -->
+   <script src="./script.js"></script>
 </body>
 </html>

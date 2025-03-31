@@ -1,3 +1,207 @@
 body {
-  background: blue;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  background-color: #f9f9ff;
+  color: #111;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #1a1aff;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0 0.5rem;
+  line-height: 1.4;
+}
+
+/* Behållare för båda sektioner */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+/* Rubriker ovanför varje knappgrupp */
+.controls h3 {
+  font-size: 1.2rem;
+  /* margin-bottom: 0.5rem; */
+  width: 100%;
+}
+
+.recipe-card {
+  display: block;
+  text-decoration: none;
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+  height: auto;
+}
+
+.recipe-card:hover {
+  border: 2px solid #1a1aff;
+  box-shadow: 0 0 10px rgba(26, 26, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.recipe-card p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.recipe-card p strong {
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.recipe-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+}
+
+.recipe-card ul {
+  margin: 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.recipe-card li {
+  margin-bottom: .5rem;
+}
+
+.recipe-card .source-link {
+  margin-top: auto;
+  font-size: 1rem;
+}
+
+#filter-buttons button{
+  font-size: 1.1rem;
+  margin: 5px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#filter-buttons button[data-filter="all"] {
+  background-color: #eee;
+}
+
+#filter-buttons button[data-filter="italian"] {
+  background-color: #d1f2eb;
+}
+
+#filter-buttons button[data-filter="american"] {
+  background-color: #fadbd8;
+}
+
+#filter-buttons button[data-filter="chinese"] {
+  background-color: #d6eaf8;
+}
+
+#filter-buttons button:hover {
+  background-color: white;
+  border: 2px solid #0033cc;
+}
+
+#filter-buttons button.selected {
+  background-color: white;
+  border: 3px solid #0033cc;
+  color: #0033cc;
+}
+
+
+#sort-buttons button {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-color: #ffe6f0; /* default - light pink */
+  color: #cc0055;
+  transition: all 0.2s ease;
+}
+
+#sort-buttons button:hover {
+  background-color: white;
+  border: 2px solid #cc0055;
+}
+
+#sort-buttons button.selected {
+  background-color: white;
+  border: 3px solid #cc0055;
+  color: #cc0055;
+}
+
+
+#recipe-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.recipe-card h3 {
+  margin: 0.5rem 0;
+}
+
+.recipe-card ul {
+  margin: 0.5rem 0;
+}
+
+
+
+.recipe-button:hover {
+  background-color: #0000cc;
+}
+
+
+@media (max-width: 1100px) {
+  #recipe-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  #recipe-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  #recipe-list {
+    grid-template-columns: 1fr;
+  }
 }

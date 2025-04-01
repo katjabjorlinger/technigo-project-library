@@ -18,7 +18,8 @@ A simple recipe web page that displays a list of recipes as interactive cards. U
 
 No backend or database – all recipes are stored in a JavaScript array.
 
-
+## 🌍 View it live 
+https://recept.katjabjorlinger.com/
 
 
 

@@ -270,6 +270,28 @@ function displayRecipes() {
 }
 
 
+document.getElementById("random-button").addEventListener("click", () => {
+  const container = document.getElementById("recipe-list");
+  container.innerHTML = "";
+
+  const randomRecipe = recipes[Math.floor(Math.random() * recipes.length)];
+
+  const link = document.createElement("a");
+  link.href = randomRecipe.url;
+  link.target = "_blank";
+  link.classList.add("recipe-card");
+
+  link.innerHTML = `
+    <img src="${randomRecipe.image}" alt="${randomRecipe.name}" />
+    <h3>${randomRecipe.name}</h3>
+    <p><strong>Cuisine:</strong> ${capitalizeCuisine(randomRecipe.cuisineType)}</p>
+    <p><strong>Time:</strong> ${formatTime(randomRecipe.totalTime)}</p>
+    <h4>Ingredients</h4>
+    <ul>${randomRecipe.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
+  `;
+
+  container.appendChild(link);
+});
 
 
 function formatTime(minutes) {

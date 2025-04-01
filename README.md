@@ -1,10 +1,24 @@
-# Library
+# 🍲 Recipe App
 
-Replace this readme with your own information about the project. You can include things like:
+A simple recipe web page that displays a list of recipes as interactive cards. Users can filter by cuisine type, sort by cooking time, or get a random recipe suggestion.
 
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
+## 🚀 Features
 
-## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+- Display recipes with images, ingredients, cooking time, and source link
+- Filter by cuisine type (e.g. Italian, American, Chinese)
+- Sort recipes by total time (ascending/descending)
+- Clickable recipe cards that open the full recipe in a new tab
+- "🎲 Random recipe" button to explore something unexpected
+
+## 🧰 Technologies
+
+- HTML
+- CSS
+- JavaScript (vanilla)
+
+No backend or database – all recipes are stored in a JavaScript array.
+
+
+
+
+

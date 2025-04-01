@@ -225,13 +225,16 @@ const recipes = [
   }
 ]
 
+/* initiera filtrering och sortering */
 let currentFilter = "all";
 let currentSort = "asc";
 
+/* via recept i kort  */
 function displayRecipes() {
   const container = document.getElementById("recipe-list");
   container.innerHTML = "";
 
+  /* filtrering */
   let filteredRecipes = recipes.filter(recipe =>
     currentFilter === "all"
       ? true
@@ -246,15 +249,18 @@ function displayRecipes() {
       : (b.totalTime || 0) - (a.totalTime || 0);
   });
 
+  /* loopa igenom och skapa kort för varje rexept */
   filteredRecipes.forEach(recipe => {
     const card = document.createElement("div");
     card.classList.add("recipe-card");
 
+    /* hela kortet klickabart, länk (a) styöad som kort  */
     const link = document.createElement("a");
     link.href = recipe.url;
     link.target = "_blank";
     link.classList.add("recipe-card");
     
+    /* html */
     link.innerHTML = `
       <img src="${recipe.image}" alt="${recipe.name}" />
       <h3>${recipe.name}</h3>
@@ -263,13 +269,13 @@ function displayRecipes() {
       <h4>Ingredients</h4>
       <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
     `;
-    
+     /* lägg till i DOM */
     container.appendChild(link);
     
   });
 }
 
-
+/* logik för random knapp */
 document.getElementById("random-button").addEventListener("click", () => {
   const container = document.getElementById("recipe-list");
   container.innerHTML = "";
@@ -293,18 +299,18 @@ document.getElementById("random-button").addEventListener("click", () => {
   container.appendChild(link);
 });
 
-
+/* konvertering för tid, från minuter till timmar och minuter */
 function formatTime(minutes) {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   return h > 0 ? `${h}h ${m} minutes` : `${m} minutes`;
 }
 
+/* första bokstaven stor */
 function capitalize(text) {
   if (typeof text !== "string") return "";
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
-
 
 function capitalizeCuisine(cuisine) {
   if (Array.isArray(cuisine)) {
@@ -315,16 +321,7 @@ function capitalizeCuisine(cuisine) {
   return "";
 }
 
-
-
-
-document.querySelectorAll("#sort-buttons button").forEach(btn =>
-  btn.addEventListener("click", () => {
-    currentSort = btn.dataset.sort;
-    displayRecipes();
-  })
-);
-
+/* eventlyssnare för filtrering */
 document.querySelectorAll("#filter-buttons button").forEach(btn => {
   btn.addEventListener("click", () => {
     currentFilter = btn.dataset.filter;
@@ -339,6 +336,7 @@ document.querySelectorAll("#filter-buttons button").forEach(btn => {
   });
 });
 
+/* eventlyssnare för sortering */
 document.querySelectorAll("#sort-buttons button").forEach(btn =>
   btn.addEventListener("click", () => {
     currentSort = btn.dataset.sort;
@@ -354,5 +352,5 @@ document.querySelectorAll("#sort-buttons button").forEach(btn =>
 );
 
 
-
+/* display recipies körs när sidan öppnas */
 window.addEventListener("DOMContentLoaded", displayRecipes);

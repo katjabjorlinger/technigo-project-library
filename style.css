@@ -12,14 +12,6 @@ h1 {
   color: #1a1aff;
 }
 
-/* third heading, filter  */
-/* h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 0.75rem 0 0 0.5rem;
-  line-height: 1.4;
-} */
-
 /* Behållare för filtrering och sortering*/
 .controls {
   display: flex;
@@ -27,13 +19,6 @@ h1 {
   gap: 1rem;
   margin-bottom: 2rem;
   align-items: flex-start;
-}
-
-/* Rubriker sortering och filtrering*/
-.controls h3 {
-  font-size: 1.2rem;
-  /* margin-bottom: 0.5rem; */
-  width: 100%;
 }
 
 .filter-group,
@@ -97,11 +82,6 @@ h1 {
 }
 
 .recipe-card ul {
-  margin: 0.5rem 0;
-}
-
-
-.recipe-card ul {
   margin: 1rem;
   padding-left: 1rem;
   font-size: 1rem;
@@ -118,7 +98,7 @@ h1 {
   font-size: 1rem;
 }
 
-/* style for buttons */
+/* style for filter buttons */
 #filter-buttons button{
   font-size: 1.1rem;
   padding: 8px 14px;
@@ -189,7 +169,7 @@ h1 {
   color: #0033cc;
 }
 
-
+/* sort buttions */
 #sort-buttons button {
   font-weight: 600;
   font-size: 1.1rem;
@@ -222,10 +202,7 @@ h1 {
   align-items: start;
 }
 
-.recipe-button:hover {
-  background-color: #0000cc;
-}
-
+/* slumpa recept */
 #random-button {
   font-weight: 600;
   padding: 10px 20px;
@@ -243,8 +220,7 @@ h1 {
   background-color: #0000cc;
 }
 
-
-
+/* grid media queries */
 @media (max-width: 1100px) {
   #recipe-list {
     grid-template-columns: repeat(3, 1fr);
